@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/apcera/gssapi"
+	"github.com/gunnarbeutner/gssapi"
 )
 
 func TestClientWrap(t *testing.T) {

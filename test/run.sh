@@ -174,14 +174,14 @@ fi
 
 # GSSAPI service
 log "Build and unit-test gssapi on host"
-go test github.com/apcera/gssapi
+go test github.com/gunnarbeutner/gssapi
 
 build_image "service" "service-${env_suffix}" "$KEYTAB_FUNCTION" >/dev/null
 run_image "service" \
         "service-${env_suffix}" \
         "--detach \
         $DOCKER_KDC_OPTS \
-        --volume $TEST_DIR/gssapi:/opt/go/src/github.com/apcera/gssapi" >/dev/null
+        --volume $TEST_DIR/gssapi:/opt/go/src/github.com/gunnarbeutner/gssapi" >/dev/null
 map_ports "service" 80
 wait_until_available "service" $SERVICE_PORT_80_TCP_ADDR $SERVICE_PORT_80_TCP_PORT
 
@@ -192,7 +192,7 @@ if [[ "$OSTYPE" != "darwin"* || "$CLIENT_IN_CONTAINER" != "" ]]; then
                 "client" \
                 "--link=service:service \
                 $DOCKER_KDC_OPTS \
-                --volume $TEST_DIR/gssapi:/opt/go/src/github.com/apcera/gssapi"
+                --volume $TEST_DIR/gssapi:/opt/go/src/github.com/gunnarbeutner/gssapi"
 else
         log "Run gssapi sample client on host"
         KRB5_CONFIG_TEMPLATE=${DOCKER_DIR}/client/krb5.conf.template \

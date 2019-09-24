@@ -3,7 +3,7 @@
 gssapi is [Apache 2.0 licensed](LICENSE), and we're happy to accept pull
 requests. Planned/desired work lives in the [TODO file](TODO.md). If you want to
 start working on something, grab an item from the [TODO](TODO.md), create a new
-[Github Issue](https://github.com/apcera/gssapi/issues) and assign it to
+[Github Issue](https://github.com/gunnarbeutner/gssapi/issues) and assign it to
 yourself, and begin working on your code.
 
 # Suggested Workflow

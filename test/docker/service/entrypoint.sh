@@ -8,7 +8,7 @@ cat /tmp/krb5.conf.template \
         | sed -e "s/REALM_NAME/${REALM_NAME}/g" \
 	> /opt/go-gssapi-test-service/krb5.conf
 
-(cd /opt/go-gssapi-test-service && go test -c -o test -tags 'servicetest' github.com/apcera/gssapi/test)
+(cd /opt/go-gssapi-test-service && go test -c -o test -tags 'servicetest' github.com/gunnarbeutner/gssapi/test)
 
 exec /opt/go-gssapi-test-service/test \
 	--test.v=true \

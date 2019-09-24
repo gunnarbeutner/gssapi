@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/apcera/gssapi"
+	"github.com/gunnarbeutner/gssapi"
 )
 
 func TestCheckSPNEGONegotiate(t *testing.T) {
